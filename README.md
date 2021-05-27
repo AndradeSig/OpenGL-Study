@@ -10,3 +10,5 @@ API's: <img src="https://pics.freeicons.io/uploads/icons/png/6991391551551941714
 ***Resultado do Commit:***
 <br/>
 <img src="https://cdn.discordapp.com/attachments/843628319975014423/846926401440972810/unknown.png" align="center">
+<br/>
+<img src="https://cdn.discordapp.com/attachments/842862204952117248/847312178507022356/unknown.png" align="center">
