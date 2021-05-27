@@ -37,7 +37,7 @@ const char *fragmentShaderSource = "#version 330 core\n"
     "uniform vec4 ourColor;\n"
     "void main()\n"
     "{\n"
-    "   FragColor = ourColor;\n" // Transformo o Fragmento de Cor em uma Vertex Color
+    "   FragColor = ourColor;\n" // Transformo o Fragmento de Cor em uma OurColor
     "}\n\0";
 
 
