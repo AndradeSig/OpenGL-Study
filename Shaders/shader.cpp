@@ -206,7 +206,7 @@ void LoopRender(GLFWwindow* window){
 		glClear(GL_COLOR_BUFFER_BIT);
 
 
-		// CHANGE COLORS OF SHADER
+		// TROCAR COR DO SHADER
 		glUseProgram(shaderProgram);
 		float timeValue = glfwGetTime();
     	float greenValue = sin(timeValue) / 2.0f + 0.5f;
