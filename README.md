@@ -13,6 +13,6 @@ API's: <img src="https://pics.freeicons.io/uploads/icons/png/6991391551551941714
 <br/>
 <img src="https://cdn.discordapp.com/attachments/842862204952117248/847312178507022356/unknown.png" width="520px" align="center">
 ####
-***Triângulo que muda as cores do Shader a cada atualização dos Frames***
+***Triângulo que muda as Cores a cada atualização dos Frames***
 <br/>
 <img src="https://cdn.discordapp.com/attachments/843628319975014423/847572418658828318/unknown.png" width="520px" align="center">
