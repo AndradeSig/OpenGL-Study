@@ -10,7 +10,3 @@ API's: <img src="https://pics.freeicons.io/uploads/icons/png/6991391551551941714
 ***Resultado(s) do Commit:***
 <br/>
 <img src="https://cdn.discordapp.com/attachments/843628319975014423/847582933970845736/unknown.png" width="520px" align="center">
-####
-***Triângulo que muda as Cores a cada atualização dos Frames***
-<br/>
-<img src="https://cdn.discordapp.com/attachments/843628319975014423/847572418658828318/unknown.png" width="520px" align="center">
