@@ -9,6 +9,6 @@ API's: <img src="https://pics.freeicons.io/uploads/icons/png/6991391551551941714
 ####
 ***Resultado(s) do Commit:***
 <br/>
-<img src="https://cdn.discordapp.com/attachments/814473566031839263/848051726485422110/unknown.png" width="520px" align="center">
+<img src="https://media.discordapp.net/attachments/814473566031839263/848234386025611323/unknown.png?width=728&height=568" width="520px" align="center">
 <br/>
 <img src="https://cdn.discordapp.com/attachments/814473566031839263/848041720788680714/unknown.png" width="520px" align="center">
