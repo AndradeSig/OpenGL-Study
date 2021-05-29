@@ -15,25 +15,25 @@ void processInput(GLFWwindow *window);
 
 /** VÉRTICES DO TRIÂNGULO **/
 float vertices[] = {
-	// Posição:         	// CORES: 				// Textura:
-    -0.5f, -0.5f, 0.0f, 	1.0f,0.0f,0.0f,			0.0f, 0.0f, // ESQUERDA  
-     0.5f, -0.5f, 0.0f, 	0.0f,1.0f,0.0f,			1.0f, 0.0f, // DIREITA 
-     0.0f,  0.5f, 0.0f, 	0.0f, 0.0f, 1.0f,		0.5f, 1.0f  // CIMA
+	// Posição:         	// CORES: 				// TEXTURA:
+     0.4f,  0.5f, 0.0f, 	1.0f, 0.0f, 0.0f,		1.0f, 1.0f, // CANTO SUPERIOR DIREITO
+     0.4f, -0.5f, 0.0f, 	0.0f, 1.0f, 0.0f,		1.0f, 0.0f, // CANTO INFERIOR DIREITO
+    -0.4f, -0.5f, 0.0f, 	0.0f, 0.0f, 1.0f,		0.0f, 0.0f, // CANTO INFERIOR ESQUERDO
+    -0.4f,  0.5f, 0.0f,		1.0f, 1.0f, 0.0f,       0.0f, 1.0f  // CANTO SUPERIOR ESQUERDO
 }; 
 
 
-/** COORDENADAS DA TEXTURA **/
-float textCoords[] = {
-	0.0f, 0.0f, // canto inferior esquerdo
-    1.0f, 0.0f, // canto inferior direito
-    0.5f, 1.0f // canto superior central
+/** INDÍCES DO OBETO **/
+unsigned int indices[] = {
+	0, 1, 3,
+	1, 2, 3
 };
 
 
 
 
-/** VBO E VAO **/
-unsigned int VBO, VAO;
+/** VBO, VAO E EBO **/
+unsigned int VBO, VAO, EBO;
 
 
 
@@ -77,12 +77,18 @@ int main()
 	/** BUFFERS**/
 	glGenVertexArrays(1,&VAO);
 	glGenBuffers(1,&VBO);
+	glGenBuffers(1,&EBO);
 
 	glBindVertexArray(VAO);
 	glBindBuffer(GL_ARRAY_BUFFER,VBO);
 
 	/** FAZER A CÓPIA DOS DADOS DAS VÉRTICES DEFINIDAS **/
 	glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices,GL_STATIC_DRAW);
+
+
+	/** FAZER A CÓPIA DOS INDICES DEFINIDOS(EBO) **/
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(indices),indices,GL_STATIC_DRAW);
 
 
 	/** INTERPRETAR OS DADOS DA VÉRTICE **/
@@ -123,11 +129,11 @@ int main()
 	/** DEFINIÇÕES DA TEXTURA **/
 	int width, height, nrChannels;
 	stbi_set_flip_vertically_on_load(true); // Inverter a imagem no Eixo Y  
-	unsigned char *data = stbi_load("Images/whatsapp2.jpg",&width,&height,&nrChannels,0);
+	unsigned char *data = stbi_load("Images/minecraft.png",&width,&height,&nrChannels,0);
 	
 	// Gerar textura com o Mipmap
 	if(data){
-   		glTexImage2D(GL_TEXTURE_2D,0,GL_RGB,width,height,0,GL_RGB,GL_UNSIGNED_BYTE,data);
+   		glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,width,height,0,GL_RGBA,GL_UNSIGNED_BYTE,data);
    		glGenerateMipmap(GL_TEXTURE_2D);
    	}else{
    		std::cout << "Falha ao carregar Textura" << std::endl;
@@ -152,7 +158,7 @@ int main()
 
 
 	/** DEFINIÇÕES DA TEXTURA 2 **/
-	data = stbi_load("Images/marck.png",&width,&height,&nrChannels,0);
+	data = stbi_load("Images/trollFace.png",&width,&height,&nrChannels,0);
 	
 	// Gerar textura com o Mipmap
 	if(data){
@@ -189,7 +195,7 @@ int main()
 
 		ourShader.use();
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES,0,3);
+		glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,0);
 
 
 		// verifica e chama eventos e troca os buffers
